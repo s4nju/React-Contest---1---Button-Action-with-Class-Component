@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "../styles/App.css";
 
 class App extends Component {
@@ -9,16 +9,15 @@ class App extends Component {
     };
   }
 
-  handleClick() {
-    console.log("Clicked");
-    this.setState({ buttonClicked: false });
-  }
-
   render() {
     return (
       <div id="main">
-        {/* Do not remove this main div!! */}
-        <button id="click" onClick={this.handleClick()}></button>
+        <button
+          id="click"
+          onClick={() =>
+            this.setState({ buttonClicked: !this.state.buttonClicked })
+          }
+        ></button>
         {this.state.buttonClicked ? (
           <p id="para">
             Hello, I've learnt to use the full-stack evaluation tool. This makes
